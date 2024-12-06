@@ -8,47 +8,30 @@
 </head>
 <body>
     <div class="container">
-        <h1>Cửa hàng thời trang nam A Long</h1>
+        <!-- Tiêu đề cửa hàng -->
+        <div class="header">
+            <h1>Cửa hàng thời trang nam A Long</h1>
+        </div>
 
         <form id="sizeForm">
-            <div>
+            <div class="input-group">
                 <label for="height">Chiều cao (cm):</label>
                 <input type="number" id="height" required>
             </div>
-            <div>
+            <div class="input-group">
                 <label for="weight">Cân nặng (kg):</label>
                 <input type="number" id="weight" required>
             </div>
-
-            <!-- Size áo -->
-            <div>
-                <label for="shirtSize">Size áo:</label>
-                <select id="shirtSize">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
-            </div>
-
-            <!-- Size quần -->
-            <div>
-                <label for="pantsSize">Size quần:</label>
-                <select id="pantsSize">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
-            </div>
-
-            <!-- Các số đo khác -->
-            <div>
+            <div class="input-group">
                 <label for="waist">Vòng eo (cm):</label>
                 <input type="number" id="waist">
             </div>
-            <div>
-                <label for="inseam">Chiều dài quần (cm):</label>
+            <div class="input-group">
+                <label for="shoulder">Chiều dài vai (cm):</label>
+                <input type="number" id="shoulder">
+            </div>
+            <div class="input-group">
+                <label for="inseam">Chiều dài chân (cm):</label>
                 <input type="number" id="inseam">
             </div>
 
