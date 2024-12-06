@@ -4,39 +4,26 @@ document.getElementById('sizeForm').addEventListener('submit', function (e) {
     // Lấy thông tin từ các trường nhập liệu
     const height = parseFloat(document.getElementById('height').value);
     const weight = parseFloat(document.getElementById('weight').value);
-    const shirtSize = document.getElementById('shirtSize').value;
-    const pantsSize = document.getElementById('pantsSize').value;
     const waist = parseFloat(document.getElementById('waist').value);
+    const shoulder = parseFloat(document.getElementById('shoulder').value);
     const inseam = parseFloat(document.getElementById('inseam').value);
 
-    let shirtRecommendation = '';
-    let pantsRecommendation = '';
+    let sizeRecommendation = '';
 
-    // Tính toán size áo
+    // Tính toán size cho áo và quần (ví dụ đơn giản dựa vào các số đo)
     if (height < 160 && weight < 60) {
-        shirtRecommendation = 'Size áo: S';
-    } else if (height >= 160 && height < 170 && weight >= 60 && weight < 75) {
-        shirtRecommendation = 'Size áo: M';
-    } else if (height >= 170 && weight >= 75) {
-        shirtRecommendation = 'Size áo: L';
+        sizeRecommendation = 'Áo: S, Quần: S';
+    } else if ((height >= 160 && height < 170) && (weight >= 60 && weight < 75)) {
+        sizeRecommendation = 'Áo: M, Quần: M';
+    } else if ((height >= 170 && weight >= 75) || (waist >= 85 && shoulder >= 45 && inseam >= 85)) {
+        sizeRecommendation = 'Áo: L, Quần: L';
     } else {
-        shirtRecommendation = 'Size áo: XL';
-    }
-
-    // Tính toán size quần
-    if (waist < 70 && inseam < 80) {
-        pantsRecommendation = 'Size quần: S';
-    } else if (waist >= 70 && waist < 85 && inseam >= 80 && inseam < 90) {
-        pantsRecommendation = 'Size quần: M';
-    } else if (waist >= 85 && inseam >= 90) {
-        pantsRecommendation = 'Size quần: L';
-    } else {
-        pantsRecommendation = 'Size quần: XL';
+        sizeRecommendation = 'Áo: XL, Quần: XL';
     }
 
     // Hiển thị kết quả
     document.getElementById('result').innerHTML = `
-        <p>${shirtRecommendation}</p>
-        <p>${pantsRecommendation}</p>
+        <p><strong>Size áo và quần của bạn:</strong></p>
+        <p>${sizeRecommendation}</p>
     `;
 });
